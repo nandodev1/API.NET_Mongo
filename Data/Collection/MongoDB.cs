@@ -15,9 +15,13 @@ namespace Api.Data
         {
             try
             {
+            var client = new MongoClient("mongodb+srv://api:4rY4MHOQbRBglyq7@cluster0.2ghw4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+            DB = client.GetDatabase("coronaVirus");
+
+/*
                 var settings = MongoClientSettings.FromUrl(new MongoUrl(configuration["ConnectionString"]));
                 var client = new MongoClient(settings);
-                DB = client.GetDatabase(configuration["NomeBanco"]);
+                DB = client.GetDatabase(configuration["NomeBanco"]);*/
                 MapClasses();
             }
             catch (Exception ex)
